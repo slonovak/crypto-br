@@ -9,7 +9,10 @@
 #include<cstdlib>
 #include<termios.h>
 
+#pragma GCC optimise("Ofast,unroll-loops,no-stack-protector,fast-math");
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,abm,mmx,popcnt,avx,avx2,tune=native")
 using namespace std;
+
 
 mutex m;
 
@@ -50,7 +53,10 @@ void summer(int len, int from, long long to, int step, int f){
      }
 }
 
-int main(){
+signed main(){
+    ios::ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
     int64_t from, to;
     int f, cores;
     cin >> from >> to >> cores>>f;
